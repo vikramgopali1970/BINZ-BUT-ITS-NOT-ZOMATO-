@@ -9,6 +9,7 @@ var restuarentsDb = require('./database/RestuarantsDB');
 var bookingsDb = require('./database/BookingsDb');
 
 var routes = require('./routes/home');
+var booking = require('./routes/booking');
 var users = require('./routes/users');
 
 var app = express();
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/bookingRestaurants', booking);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

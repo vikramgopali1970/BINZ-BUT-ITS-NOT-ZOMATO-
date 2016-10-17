@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 
+
 router.get('/getdata', function (req, res, next) {
     restaurantSchema.find({},function (err, queryRes) {
         if(err) throw error;

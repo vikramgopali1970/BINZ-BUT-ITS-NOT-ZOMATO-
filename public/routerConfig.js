@@ -5,20 +5,20 @@
 app.config(function ($stateProvider, $urlRouterProvider) {
 
 
-    var index = {
-        name : 'index',
+    var home = {
+        name : 'home',
         url : '/',
         controller: 'indexcntrrler',
         templateUrl : "app/Components/Home/home.html"
     }
 
-    var homePage = {
-        name : 'home',
-        url : '/home',
-        templateUrl : "app/Components/Home/a.html"
+    var addRestaurant = {
+        name : 'Add Restaurent',
+        url : '/addRestaurant',
+        templateUrl : "app/Components/bookrestaurant/bookrestaurant.html"
     }
 
-    $stateProvider.state(homePage);
-    $stateProvider.state(index);
+    $stateProvider.state(addRestaurant);
+    $stateProvider.state(home);
     $urlRouterProvider.otherwise("/");
 })
