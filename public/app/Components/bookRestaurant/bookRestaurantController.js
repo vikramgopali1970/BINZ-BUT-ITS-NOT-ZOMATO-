@@ -4,8 +4,8 @@
 
 app.factory('bookings',function ($http) {
 
-    var addBooking = function (bookDate,bookTime,bookDuration,email_id) {
-        $http.post('/bookingRestaurants',{'date':bookDate,'time':bookTime,'dur':bookDuration,'email_d':email_id}).success(function (data, status) {
+    var addBooking = function (bookingObj) {
+        return $http.post('/bookingRestaurants',bookingObj).success(function (data, status) {
             console.log(status);
         }).error(function (err) {
             console.log('error occured',err);
@@ -17,12 +17,22 @@ app.factory('bookings',function ($http) {
     }
 });
 
-app.controller('bookingRestaurant',['$scope','bookings', function ($scope,bookings) {
+app.controller('bookingRestaurant',['$scope','bookings', '$stateParams', function ($scope,bookings,$stateParams) {
 
-    
+    console.log('thissss',$stateParams.name,$stateParams.id);
+    $scope.Rname = $stateParams.name.toUpperCase();
     $scope.confirmRestaurant = function () {
-        console.log($scope.bookDate,$scope.bookTime,$scope.bookDuration,$scope.email_id);
-        bookings.bookings($scope.bookDate,$scope.bookTime,$scope.bookDuration).then(function (results) {
+        var bookingInfo = {
+            date : $scope.bookDate,
+            time : $scope.bookTime,
+            duration : $scope.bookDuration,
+            mail_id : $scope.email_id,
+            restaurant_id : $stateParams.id,
+            restName : $stateParams.name
+        };
+
+        console.log(bookingInfo);
+        bookings.bookings(bookingInfo).then(function (results) {
             console.log('is it this',results.data);
         });
     }

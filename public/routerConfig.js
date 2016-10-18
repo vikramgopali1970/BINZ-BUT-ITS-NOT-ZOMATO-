@@ -14,8 +14,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     var addRestaurant = {
         name : 'Add Restaurent',
-        url : '/addRestaurant',
-        templateUrl : "app/Components/bookrestaurant/bookrestaurant.html"
+        url : '/addRestaurant/:name?id',
+        templateUrl : "app/Components/bookrestaurant/bookrestaurant.html",
     }
 
     $stateProvider.state(addRestaurant);

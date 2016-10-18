@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
     
 });
 
-
+router.post('/bookthis', function (req, res, next) {
+    console.log('inside booking this');
+})
 
 router.get('/getdata', function (req, res, next) {
     restaurantSchema.find({},function (err, queryRes) {

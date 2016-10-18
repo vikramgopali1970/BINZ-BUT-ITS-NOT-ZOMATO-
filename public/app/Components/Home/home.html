@@ -1,29 +1,31 @@
 
 <div class="row">
     <div class="col-md-4" ng-repeat="item in restaurantsListReg">
-        <div class="card">
-            <div class="card-block">
-                <img ng-src="../../../assets/images/{{item.image_src}}" class="col-md-6 wid" />
-                <div class="col-md-6">
-                    <h4 class="card-title">{{item.name.toUpperCase()}}</h4>
-                    <label>website</label>
+        <form ng-submit="bookThis(item)">
+            <div class="card">
+                <div class="card-block">
+                    <img ng-src="../../../assets/images/{{item.image_src}}" class="col-md-6 wid" />
+                    <div class="col-md-6">
+                        <h4 class="card-title">{{item.name.toUpperCase()}}</h4>
+                        <label>website</label>
+                    </div>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item col-md-6 loc"><span>location :</span></li>
+                    <li class="list-group-item col-md-6 loc"><span>{{item.location}}</span></li>
+                    <li class="list-group-item col-md-6"><span>Contact Number :</span></li>
+                    <li class="list-group-item col-md-6"><span>{{item.contactInfo}}</span></li>
+                    <li class="list-group-item col-md-6"><span>Tables :</span></li>
+                    <li class="list-group-item col-md-6"><span>{{item.tables}}</span></li>
+                    <li class="list-group-item col-md-6"><span>Capacity :</span></li>
+                    <li class="list-group-item col-md-6"><span>{{item.capacity}}</span></li>
+                    <li class="list-group-item col-md-6 cuisine"><span>Cuisines :</span></li>
+                    <li class="list-group-item col-md-6 cuisine"><span ng-repeat="cuisine in item.cuisines">{{cuisine}} </span></li>
+                    <li class="list-group-item col-md-6"><span>Cost for 2 :</span></li>
+                    <li class="list-group-item col-md-6"><span>{{item.cost}}</span></li>
+                </ul>
+                <button  class="card-link" ui-sref="Add Restaurent({name:item.name,id:item._id})">Book Table Here</button>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item col-md-6 loc"><span>location :</span></li>
-                <li class="list-group-item col-md-6 loc"><span>{{item.location}}</span></li>
-                <li class="list-group-item col-md-6"><span>Contact Number :</span></li>
-                <li class="list-group-item col-md-6"><span>{{item.contactInfo}}</span></li>
-                <li class="list-group-item col-md-6"><span>Tables :</span></li>
-                <li class="list-group-item col-md-6"><span>{{item.tables}}</span></li>
-                <li class="list-group-item col-md-6"><span>Capacity :</span></li>
-                <li class="list-group-item col-md-6"><span>{{item.capacity}}</span></li>
-                <li class="list-group-item col-md-6 cuisine"><span>Cuisines :</span></li>
-                <li class="list-group-item col-md-6 cuisine"><span ng-repeat="cuisine in item.cuisines">{{cuisine}} </span></li>
-                <li class="list-group-item col-md-6"><span>Cost for 2 :</span></li>
-                <li class="list-group-item col-md-6"><span>{{item.cost}}</span></li>
-            </ul>
-            <button  class="card-link">Book Table Here</button>
-        </div>
+        </form>
     </div>
 </div>

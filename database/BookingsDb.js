@@ -27,15 +27,15 @@ var bookingsSchema = new schema({
         default : new Date(),
         required : true
     },
-    updatedLast: {
-        type : Date,
-        required : true
-    },
     bookedTime: {
         type : Date,
         required : true
     },
-    numHrs : {
+    duration : {
+        type : Number,
+        required : true
+    },
+    restaurant_id : {
         type : Number,
         required : true
     }
