@@ -1,0 +1,60 @@
+<div ng-include="'app/Components/addRestaurant/addRestNavbar.html'"></div>
+<div ng-controller="addRestaurant">
+    <h1 class="booking-name">Add Your Restaurant</h1>
+    <br/>
+    <div class="col-md-6">
+        <h4>Please fill out the below details</h4>
+        <form class="form-group row" ng-submit="addNewRestaurant()">
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Name</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Restauran Name"  ng-model="rName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Location</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Restaurant Location"  ng-model="rLoc">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Contact Info</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Restaurant Contact Number"  ng-model="rNum">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Number of Tables</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Total Tables"  ng-model="rTableNum">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Cost for 2</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Cost"  ng-model="rCost">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Table Capacity</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Per Table Capacity"  ng-model="rTableCapacity">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Cuisines</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Cuisines"  ng-model="rCuisines">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-xs-2 col-form-label">Image src</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" value="Image name"  ng-model="rImg">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+
+</div>

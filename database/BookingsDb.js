@@ -44,4 +44,10 @@ var bookingsSchema = new schema({
 
 var bookings = mongoose.model('bookings',bookingsSchema);
 
+
+/*bookings.find({}, function (err, res) {
+    if (err) throw err;
+
+    console.log(res);
+});*/
 module.exports = bookings;

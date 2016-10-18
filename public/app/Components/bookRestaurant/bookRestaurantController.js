@@ -20,6 +20,7 @@ app.factory('bookings',function ($http) {
 app.controller('bookingRestaurant',['$scope','bookings', '$stateParams', function ($scope,bookings,$stateParams) {
 
     console.log('thissss',$stateParams.name,$stateParams.id);
+    $scope.img = $stateParams.img;
     $scope.Rname = $stateParams.name.toUpperCase();
     $scope.confirmRestaurant = function () {
         var bookingInfo = {

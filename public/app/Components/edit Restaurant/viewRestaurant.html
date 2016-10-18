@@ -1,0 +1,45 @@
+<div class="wrapper">
+    <div ng-include="'app/Components/edit Restaurant/viewRestNavbar.html'"></div>
+    <div class="col-md-6">
+        <table class="list-group list-group-flush"  class="col-md-6">
+                <tr>
+                    <td colspan="2"class="list-group-item col-md-6 loc"><h4 class="card-title">
+                        <a>{{item.name.toUpperCase()}}</a></h4>
+                        <a class="ion-trash-a delete-restaurant round-icon" ng-click="deleteResto()"></a>
+                        <label>website</label>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6 loc"><span>location :</span></td>
+                    <td class="list-group-item col-md-6 loc"><span>{{item.location}}</span></td>
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6"><span>Contact Number :</span></td>
+                    <td class="list-group-item col-md-6"><span>{{item.contactInfo}}</span></td>
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6"><span>Tables :</span></td>
+                    <td class="list-group-item col-md-6"><span>{{user.table}}</span><a class="delete-restaurant" editable-text="user.table">change</a></td>
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6"><span>Capacity :</span></td>
+                    <td class="list-group-item col-md-6"><span>{{user.capacity}}</span><a class="delete-restaurant" editable-text="user.capacity">change</a></td>
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6 cuisine"><span>Cuisines :</span></td>
+                    <td class="list-group-item col-md-6 cuisine"><span
+                            ng-repeat="cuisine in item.cuisines">{{cuisine}} </span></td>
+                </tr>
+                <tr>
+                    <td class="list-group-item col-md-6"><span>Cost for 2 :</span></td>
+                    <td class="list-group-item col-md-6"><span>{{item.cost}}</span></td>
+                </tr>
+                <tr>
+                    <td><button ng-click="updateAtributes()">Update the Changes</button></td>
+                    <td><button ui-sref="View Bookings" ng-click="viewBookings()">View all the Bookings</button></td>
+                </tr>
+        </table>
+     </div>
+    <img ng-src="../../../assets/images/{{item.image_src}}" class="col-md-6"/>
+</div>

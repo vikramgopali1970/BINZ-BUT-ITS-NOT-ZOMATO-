@@ -21,3 +21,7 @@ a {
 .booking-name{
   text-align: center;
 }
+
+.delete-restaurant{
+  float: right;
+}

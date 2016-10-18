@@ -22,7 +22,20 @@ router.post('/', function (req,res,next) {
         });
     });
 
-    res.json({success:true});
+
 });
+
+
+router.get('/getBooking', function (req, res, next) {
+    var obj = JSON.parse(req.query.bookDetails);
+    console.log('inside get bookings node',obj.name);
+    //exec query to find all bookings of this restaurants
+    BookingSchema.find({restName:obj.name}, function (err,results) {
+        if(err) throw err;
+        console.log(results);
+        res.json({result:results});
+    });
+});
+
 
 module.exports = router;

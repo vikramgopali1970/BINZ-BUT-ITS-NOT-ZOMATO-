@@ -20,4 +20,7 @@ router.get('/getdata', function (req, res, next) {
         res.json({restaurantList : queryRes});
     })
 });
+
+
+
 module.exports = router;

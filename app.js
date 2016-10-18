@@ -10,7 +10,9 @@ var bookingsDb = require('./database/BookingsDb');
 
 var routes = require('./routes/home');
 var booking = require('./routes/booking');
+var viewRestaurants = require('./routes/viewRestaurants');
 var users = require('./routes/users');
+var addRestaurants = require('./routes/addRestaurant');
 
 var app = express();
 
@@ -28,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/bookingRestaurants', booking);
+app.use('/restaurant', viewRestaurants);
+app.use('/addRestaurant', addRestaurants);
 app.use('/users', users);
 
 // catch 404 and forward to error handler

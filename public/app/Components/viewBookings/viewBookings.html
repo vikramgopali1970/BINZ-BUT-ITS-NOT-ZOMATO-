@@ -1,0 +1,18 @@
+<div>
+    <div ng-include="'app/Components/viewBookings/viewBookingsNavbar.html'"></div>
+    <div class="card col-md-6" ng-repeat="item in bookings">
+        <div class="card-block">
+            <div >
+                <h4 class="card-title">{{item.restName}}</h4>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item col-md-6"><span>Customer Email :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.custEmail}}</span></li>
+            <li class="list-group-item col-md-6"><span>Time :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.bookedTime}}</span></li>
+            <li class="list-group-item col-md-6"><span>Duration :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.duration}}</span></li>
+        </ul>
+    </div>
+</div>

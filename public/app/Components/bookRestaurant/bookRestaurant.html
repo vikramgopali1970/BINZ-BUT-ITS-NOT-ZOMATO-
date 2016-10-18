@@ -1,4 +1,4 @@
-
+<div ng-include="'app/Components/bookRestaurant/bookNavbar.html'"></div>
 <div ng-controller="bookingRestaurant">
     <h1 class="booking-name">You have choosen to book the {{Rname}} Restaurant</h1>
     <br/>
@@ -32,5 +32,5 @@
             <button type="submit" class="btn btn-primary">Confirm</button>
         </form>
     </div>
-    <img src="../../../assets/images/hotel-preview-6.jpg" class="col-md-6"/>
+    <img ng-src="../../../assets/images/{{img}}" class="col-md-6"/>
 </div>
