@@ -37,18 +37,27 @@ app.controller('indexcntrrler', ['$scope','Restaurants', function ($scope, Resta
     
     vm.applyfilter = function () {
         var temp = [];
-        angular.forEach(Restaurants.getStoredData(), function (items) {
-            console.log(typeof(items.cuisines),items.cuisines);
-            if(items.name.toLowerCase().match(vm.search_query.toLowerCase())){
-                temp.push(items);
-            }
-            if(items.location.toLowerCase().match(vm.search_query.toLowerCase())){
-                temp.push(items);
-            }
-            if($.inArray(vm.search_query, items.cuisines) != -1 || $.inArray((vm.search_query.charAt(0).toUpperCase()+vm.search_query.slice(1)), items.cuisines) != -1){
-                temp.push(items);
-            }
-        });
+        if(parseInt(vm.search_query)){
+            angular.forEach(Restaurants.getStoredData(), function (items) {
+                console.log(items.tables);
+                if(parseInt(vm.search_query) <= parseInt(items.capacity)){
+                    temp.push(items);
+                }
+            });
+        }else{
+            angular.forEach(Restaurants.getStoredData(), function (items) {
+                console.log(typeof(items.cuisines),items.cuisines);
+                if(items.name.toLowerCase().match(vm.search_query.toLowerCase())){
+                    temp.push(items);
+                }
+                if(items.location.toLowerCase().match(vm.search_query.toLowerCase())){
+                    temp.push(items);
+                }
+                if($.inArray(vm.search_query, items.cuisines) != -1 || $.inArray((vm.search_query.charAt(0).toUpperCase()+vm.search_query.slice(1)), items.cuisines) != -1){
+                    temp.push(items);
+                }
+            });
+        }
         vm.restaurantsListReg="";
         vm.restaurantsListReg = temp;
 
