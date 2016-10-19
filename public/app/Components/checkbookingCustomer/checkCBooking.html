@@ -1,0 +1,26 @@
+<div>
+    <div ng-include="'app/Components/checkbookingCustomer/viewCustomerBookingsNavbar.html'"></div>
+    <form id="searchForm" method="post" ng-submit="submit()">
+        <fieldset class="searchBooings">
+            <label>enter your email</label>
+            <input id="s" type="text" name="searchquery" ng-model="srchEmail">
+            <input id="submitButton" type="submit" value="Submit">
+        </fieldset>
+    </form>
+    <div class="card col-md-6" ng-repeat="item in dispBookings">
+        <div class="card-block">
+            <div >
+                <h4 class="card-title">{{item.restName}}</h4>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item col-md-6"><span>Customer Email :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.custEmail}}</span></li>
+            <li class="list-group-item col-md-6"><span>Time :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.bookedTime}}</span></li>
+            <li class="list-group-item col-md-6"><span>Duration :</span></li>
+            <li class="list-group-item col-md-6"><span>{{item.duration}}</span></li>
+        </ul>
+        <button ng-click="cancelThis(item)">Cancel</button>
+    </div>
+</div>

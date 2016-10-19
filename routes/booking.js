@@ -37,5 +37,24 @@ router.get('/getBooking', function (req, res, next) {
     });
 });
 
+router.post('/deleteThisBooking', function (req, res, next) {
+    console.log('inside delete route nodejs',req.body);
+    //exec query to delete
+    BookingSchema.remove({_id:req.body._id},function (err) {
+        if (err) throw err;
+        console.log('successfully deleted '+req.body.restName+' booking');
+        res.json({status:'successfully deleted '+req.body.restName+' booking'});
+    });
+});
+
+router.get('/getAllBooking', function (req, res, next) {
+    //exec query to find all bookings of this restaurants
+    BookingSchema.find({}, function (err,results) {
+        if(err) throw err;
+        console.log(results);
+        res.json({result:results});
+    });
+});
+
 
 module.exports = router;

@@ -32,6 +32,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller : 'viewBookings'
     };
 
+    var viewCustBooking = {
+        name : 'View Customer Bookings',
+        url : '/myBookings',
+        templateUrl : "app/Components/checkbookingCustomer/checkCBooking.html",
+        controller : 'viewCustBookings'
+    };
+
     var addRestaurant = {
         name : 'Add Restaurent',
         url : '/addRestaurant',
@@ -40,6 +47,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     };
     $stateProvider.state(addRestaurant);
+    $stateProvider.state(viewCustBooking);
     $stateProvider.state(viewBookings);
     $stateProvider.state(viewResto);
     $stateProvider.state(bookRestaurant);
