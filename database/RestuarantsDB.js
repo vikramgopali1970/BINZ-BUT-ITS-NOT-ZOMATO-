@@ -30,7 +30,7 @@ var restuarentsSchema = new schema({
         required : true
     },
     tables: {
-        type : String,
+        type : Number,
         required : true
     },
     cuisines: {
