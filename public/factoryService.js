@@ -24,8 +24,12 @@ app.factory('Restaurants',function ($http) {
         allBookings = bookings;
     };
 
-    var getRestaurantSelected = function () {
+    var getRestaurantSelectedspecific = function () {
         return allRestaurants[RestaurantIndex];
+    };
+
+    var getRestaurantSelected = function () {
+        return allRestaurants;
     };
 
      var getBookingsList = function () {
@@ -113,7 +117,7 @@ app.factory('Restaurants',function ($http) {
         book : bookThis,
         addRestaurant : addThis,
         saveRestaurantList: saveRestaurantList,
-        getRestaurantSelected: getRestaurantSelected,
+        getRestaurantSelected: getRestaurantSelectedspecific,
         selectedRestaurantIndex: saveRestaurantIndex,
         getSelectedRestaurantIndex: getRestaurantIndex,
         removeRestaurant: removeRestaurant,
@@ -122,7 +126,8 @@ app.factory('Restaurants',function ($http) {
         getCustomersBooking: getallBookingLists,
         getAllBokingsData: saveBookingsList,
         showAllBookingData: getBookingsList,
-        cancelThisBooking: cancelBooking
+        cancelThisBooking: cancelBooking,
+        getStoredData:getRestaurantSelected
     }
 });
 

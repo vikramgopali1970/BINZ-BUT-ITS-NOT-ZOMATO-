@@ -1,13 +1,13 @@
 
 <div ng-include="'app/Components/Home/homeNavbar.html'"></div>
 <div class="row">
-    <div class="col-md-4" ng-repeat="item in restaurantsListReg">
-        <form ng-submit="bookThis(item)">
+    <div class="col-md-4" ng-repeat="item in index.restaurantsListReg">
+        <form ng-submit="index.bookThis(item)">
             <div class="card">
                 <div class="card-block">
                     <img ng-src="../../../assets/images/{{item.image_src}}" class="col-md-6 wid" />
                     <div class="col-md-6">
-                        <h4 class="card-title"><a ng-click="setRestaurantIndex($index)" ui-sref="view restaurant" ui-sref-active="active">{{item.name.toUpperCase()}}</a></h4>
+                        <h4 class="card-title"><a ng-click="index.setRestaurantIndex($index)" ui-sref="view restaurant" ui-sref-active="active">{{item.name.toUpperCase()}}</a></h4>
                         <label>website</label>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                     <li class="list-group-item col-md-6"><span>Cost for 2 :</span></li>
                     <li class="list-group-item col-md-6"><span>{{item.cost}}</span></li>
                 </ul>
-                <button  ng-click="setRestaurantIndex($index)" class="card-link" ui-sref="Book Restaurent({name:item.name,id:item._id,img:item.image_src})">Book Table Here</button>
+                <button  ng-click="index.setRestaurantIndex($index)" class="card-link" ui-sref="Book Restaurent({name:item.name,id:item._id,img:item.image_src})">Book Table Here</button>
             </div>
         </form>
     </div>

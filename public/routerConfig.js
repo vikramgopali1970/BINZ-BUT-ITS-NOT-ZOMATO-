@@ -9,6 +9,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         name : 'home',
         url : '/',
         controller: 'indexcntrrler',
+        controllerAs: 'index',
         templateUrl : "app/Components/Home/home.html"
     };
 
@@ -36,7 +37,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         name : 'View Customer Bookings',
         url : '/myBookings',
         templateUrl : "app/Components/checkbookingCustomer/checkCBooking.html",
-        controller : 'viewCustBookings'
+        controller : 'viewCusBookings'
     };
 
     var addRestaurant = {
@@ -47,7 +48,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     };
     $stateProvider.state(addRestaurant);
-    $stateProvider.state(viewCustBooking);
     $stateProvider.state(viewBookings);
     $stateProvider.state(viewResto);
     $stateProvider.state(bookRestaurant);
